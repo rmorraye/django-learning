@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Contact - template</h1>
+<p>template of contact number</p>
+
+{{ my_html|safe }}
+
+<p>
+{{ my_text }}: {{ my_number }}
+</p>
+<p>
+Phone: {{ phone_number }} 
+List of things: {{ my_list }}
+</p>
+<p>
+List of things: {{ my_list }}
+</p>
+
+<ul>
+{% for my_sub_item in my_list %}
+	{% if my_sub_item == 90 %}
+		<li>{{ forloop.counter }}º element: {{ my_sub_item|add:9 }}</li>
+	{% elif my_sub_item == "Abc" %}
+		<li>ERROR!</li>
+	{% else %}
+		<li>{{ forloop.counter }}º element: {{ my_sub_item }}</li>
+	{% endif %}
+{% endfor %}
+</ul>
+
+{% endblock %}
